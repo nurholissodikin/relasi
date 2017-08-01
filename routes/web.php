@@ -33,6 +33,7 @@ Route::get('/', function () {
 // Route::get('/anak', 'MyController@tampilanak');
 
 Route::resource('orangtua','OrangtuaController');
+Route::resource('anak','AnakController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

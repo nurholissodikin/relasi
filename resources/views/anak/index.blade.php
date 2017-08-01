@@ -3,46 +3,41 @@
 @section('content')
 <div class="container">
     <div class="row">
-          <center><h1>Data Orang Tua</h1></center>
+          <center><h1>Data Anak</h1></center>
           <div class="panel panel-primary">
-                <div class="panel-heading">Data Orangtua
-                <div class="panel-title pull-right"><a href="/orangtua/create">Tambah Data</a></div></div>
+                <div class="panel-heading">Data Anak
+                <div class="panel-title pull-right"><a href="/anak/create">Tambah Data</a></div></div>
 
                 <div class="panel-body">
                 <table class="table">
                 <thead>
                 	<tr>
-                		<th>Nama Ibu</th>
-                		<th>Nama Ayah</th>
-                		<th>Umur Ibu</th>
-                		<th>Umur Ayah</th>
+                		<th>Nama</th>
+                		<th>Nama Orangtua</th>
+                		<th>Umur</th>
                 		<th>Alamat</th>
-                		<th>Nama Anak</th>
                 		<th colspan="3">Action</th>
                 	</tr>
                 </thead>
 
                 	<tbody>
-                		@foreach($ortu as $data)
+                		@foreach($anak as $data)
                 		<tr>
-                			<td>{{$data->nama_ibu}}</td>
-                			<td>{{$data->nama_ayah}}</td>
-                			<td>{{$data->umur_ibu}}</td>
-                			<td>{{$data->umur_ayah}}</td>
+                			<td>{{$data->nama}}</td>
+                            <td>{{$data->ortu->nama_ibu}} dan {{$data->ortu->nama_ayah}}</td>
+                			<td>{{$data->umur}}</td>
                 			<td>{{$data->alamat}}</td>
                 			<td>
-                				@foreach($data->anak as $a)
-                					<li>{{$a->nama}}</li>
-                				@endforeach
+                				
                 			</td>
                 			<td>
-                				<a class="btn btn-warning" href="/orangtua/{{$data->id}}/edit">Edit</a></td><td>
-                				<a class="btn btn-primary" href="/orangtua/{{$data->id}}">Show</a></td>
+                				<a class="btn btn-warning" href="/anak/{{$data->id}}/edit">Edit</a></td><td>
+                				<a class="btn btn-primary" href="/anak/{{$data->id}}">Show</a></td>
 
 
 
                 				<td>
-                				<form action="{{route('orangtua.destroy',$data->id)}}" method="post">
+                				<form action="{{route('anak.destroy',$data->id)}}" method="post">
 
                 				<input name="_method" type="hidden" value="DELETE">
                 				<input name="_token" type="hidden">
