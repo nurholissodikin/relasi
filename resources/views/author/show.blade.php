@@ -16,7 +16,7 @@
                   
 
                   <div class="form-group">
-                  <label class="control_label">Nama Ibu</label>
+                  <label class="control_label">Nama</label>
                   <input type="text" name="a" class="form-control" value="{{$author->name}}" readonly="">
                   </div>
 
